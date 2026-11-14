@@ -1,25 +1,29 @@
 const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
 
-menuButton.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", String(isOpen));
-  menuButton.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
-});
-
-nav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
+if (menuButton && nav) {
+  menuButton.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute(
+      "aria-label",
+      isOpen ? "Закрыть меню" : "Открыть меню"
+    );
   });
-});
 
-document.getElementById("year").textContent = new Date().getFullYear();
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
-const form = document.getElementById("lead-form");
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const status = form.querySelector(".form-status");
-  status.textContent = "Спасибо! Это демонстрационная форма: подключите сервис обработки заявок перед публикацией.";
-  form.reset();
-});
+const year = document.getElementById("year");
+
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
+
+// Форма отправляется напрямую через FormSubmit.
+// Не отменяем стандартную отправку формы.
