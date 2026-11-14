@@ -121,15 +121,39 @@
     <section class="contact section wrap" id="contact">
       <div class="contact-panel">
         <div class="contact-copy"><p class="eyebrow light"><i></i> ВАША ИДЕЯ — НАШ СЛЕДУЮЩИЙ ПРОЕКТ</p><h2>Давайте обсудим<br><em>ваш будущий дом.</em></h2><p>Расскажите, что вы планируете. Мы свяжемся с вами и обсудим возможные решения.</p><div class="contact-meta"><span>САНКТ-ПЕТЕРБУРГ</span><span>ПН — ПТ · 10:00–19:00</span></div></div>
-        <form class="contact-form" id="lead-form">
-          <label for="name">Ваше имя</label><input id="name" name="name" type="text" placeholder="Как к вам обращаться?" required>
-          <label for="phone">Телефон</label><input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
-          <label for="message">Что планируете?</label><textarea id="message" name="message" rows="3" placeholder="Например, строительство дома 150 м²"></textarea>
-          <label class="consent"><input type="checkbox" required><span>Согласен(на) на обработку персональных данных в соответствии с политикой конфиденциальности.</span></label>
-          <button class="button button-light submit-button" type="submit">Отправить заявку <span>↗</span></button>
-          <p class="form-note">Демо-форма: отправка данных на сервер пока не подключена.</p>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
+        <form class="contact-form" id="lead-form"
+      action="https://formsubmit.co/dolunbozedonov@gmail.com"
+      method="POST">
+
+  <input type="hidden" name="_subject" value="Новая заявка NORD HOUSE">
+  <input type="hidden" name="_template" value="table">
+
+  <label for="name">Ваше имя</label>
+  <input id="name" name="name" type="text"
+         placeholder="Как к вам обращаться?" required>
+
+  <label for="phone">Телефон</label>
+  <input id="phone" name="phone" type="tel"
+         placeholder="+7 (___) ___-__-__" required>
+
+  <label for="message">Что планируете?</label>
+  <textarea id="message" name="message" rows="3"
+            placeholder="Например, строительство дома 150 м²"></textarea>
+
+  <label class="consent">
+    <input type="checkbox" name="consent"
+           value="Согласие предоставлено" required>
+    <span>Согласен(на) на обработку персональных данных
+    в соответствии с политикой конфиденциальности.</span>
+  </label>
+
+  <button class="button button-light submit-button" type="submit">
+    Отправить заявку <span>↗</span>
+  </button>
+
+  <p class="form-note">После отправки заявки мы свяжемся с вами.</p>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>
       </div>
     </section>
   </main>
